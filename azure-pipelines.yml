@@ -12,7 +12,6 @@ steps:
     containerregistrytype: 'Container Registry'
     dockerRegistryConnection: DockerHubConnection
     dockerFile: Dockerfile
-steps:
 - task: Docker@0
   displayName: Push
   inputs:
