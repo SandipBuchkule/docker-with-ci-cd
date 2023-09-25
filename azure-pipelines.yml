@@ -1,0 +1,21 @@
+# Docker
+# Build a Docker image
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+trigger:
+- master
+
+steps:
+- task: Docker@0
+  displayName: build
+  inputs:
+    containerregistrytype: 'Container Registry'
+    dockerRegistryConnection: DockerHubConnection
+    dockerFile: Dockerfile
+steps:
+- task: Docker@0
+  displayName: Push
+  inputs:
+    containerregistrytype: 'Container Registry'
+    dockerRegistryConnection: DockerHubConnection
+    action: 'Push an image'
